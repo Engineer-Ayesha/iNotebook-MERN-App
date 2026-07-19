@@ -36,3 +36,31 @@
     transform: rotate(360deg);
   }
 }
+i{
+  cursor:pointer;
+}
+.light-input{
+  border: 1px solid #DEE2E6;
+}
+
+.dark-input{
+  border: 1px solid #495057;
+  background-color: #1F1F1F;
+  color:white;
+}
+
+.light-input::placeholder{
+  color: #6C757D;
+}
+
+.dark-input,
+.dark-input:focus {
+  background-color: #1F1F1F;
+  color: white;
+  border: 1px solid #495057;
+  box-shadow: none;
+}
+
+.dark-input::placeholder {
+  color: #ADB5BD;
+}
