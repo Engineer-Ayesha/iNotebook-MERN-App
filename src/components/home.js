@@ -15,7 +15,7 @@ function Home(props) {
       [name]: value,
     }));
   };
-  const handleClick = (e) => {
+  const handleClick = async (e) => {
     e.preventDefault();
     let errors = {};
     if (note.title === "" || note.title.length < 3) {
@@ -28,12 +28,14 @@ function Home(props) {
       errors.tag = "Tag must be at least 3 characters";
     }
     setErrors(errors);
-    addNote(note.title, note.description, note.tag);
-    setNote(useNotes);
-    if(errors.length===0){
-      props.alertFun("Note added succesffully", "success");
 
+    if (Object.keys(errors).length > 0) {
+      return;
     }
+
+    await addNote(note.title, note.description, note.tag);
+    setNote(useNotes);
+    props.alertFun("Note added successfully", "success");
   };
   return (
     <div>
@@ -64,7 +66,11 @@ function Home(props) {
               }}
             />
           </div>
-          <label htmlFor="description" className="form-label" style={{ color: props.bgcolor === "white" ? "black" : "white" }}>
+          <label
+            htmlFor="description"
+            className="form-label"
+            style={{ color: props.bgcolor === "white" ? "black" : "white" }}
+          >
             Description
           </label>
           {errors.description && (
@@ -85,7 +91,11 @@ function Home(props) {
                 : "1px solid #dee2e6",
             }}
           />
-          <label htmlFor="tag" className="form-label my-2" style={{ color: props.bgcolor === "white" ? "black" : "white" }}>
+          <label
+            htmlFor="tag"
+            className="form-label my-2"
+            style={{ color: props.bgcolor === "white" ? "black" : "white" }}
+          >
             Tag
           </label>
           {errors.tag && <p style={{ color: "red" }}>{errors.tag}</p>}
