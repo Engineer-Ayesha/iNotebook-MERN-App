@@ -72,7 +72,7 @@ From the root directory:
 ```bash
 npm run both
 ```
-
+Demo Link: https://inotebook-mern-app.netlify.app/login
 ## Author
 
 Ayesha Khalid
