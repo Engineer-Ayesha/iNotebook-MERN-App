@@ -123,7 +123,7 @@ function MyNotes(props) {
         </div>
       </div>
         <h3 style={{ color: props.bgcolor === "white" ? "black" : "white" }}>Your Notes</h3>
-        {notes.length===0 && "No Notes to display"}
+        {notes.length === 0 && <span style={{ color: props.bgcolor === "white" ? "black" : "white" }}>No Notes to display</span>}
         <div className="row">
           {notes.map((note) => {
             return (
