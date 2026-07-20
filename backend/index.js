@@ -1,13 +1,14 @@
-require("dotenv").config({ path: __dirname + "/.env" });
-console.log(process.env.MONGO_URI);
+// require("dotenv").config({ path: __dirname + "/.env" });
+require("dotenv").config({ 
+  path: __dirname + "/.env",
+  override: true
+});
 const connectToMongo=require('./db');
 connectToMongo();
 const express = require('express');
 var cors=require("cors");
 const app = express()
 const port = process.env.PORT || 5000;
-console.log("Current directory:", process.cwd());
-console.log("MONGO_URI:", process.env.MONGO_URI);
 app.use(cors());
 app.use(express.json());
 app.get('/', (req, res) => {

@@ -47,7 +47,7 @@ router.post(
           id:user.id
         }
       }
-      const authToken= jwt.sign(data,jwtSecret);
+      const authToken= jwt.sign(data,JWT_SECRET);
       // return response of server to frontend
       res.json({
         success: "User added Successfully",
@@ -93,7 +93,7 @@ router.post(
             id:user.id
           }
         }
-        const authToken= jwt.sign(data,jwtSecret);
+        const authToken= jwt.sign(data,JWT_SECRET);
         //return response
         res.json({success:"user logged successfully",authToken});
       }else{
