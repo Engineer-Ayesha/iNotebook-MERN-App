@@ -12,7 +12,7 @@ function Login(props) {
         [name]:value
       }))
     }
-  let host = "http://localhost:5000";
+  let host = "https://inotebook-mern-app-production.up.railway.app";
   const handleSubmit= async (e)=>{
     e.preventDefault();
     const response = await fetch(`${host}/api/userRoute/login`, {
@@ -26,7 +26,6 @@ function Login(props) {
     console.log(json);
     if(json.success){
       localStorage.setItem("authToken",json.authToken);
-      console.log("navigating...");
       navigate("/");
       props.alertFun("User Logged Succesffully","success");
     }else{

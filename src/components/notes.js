@@ -1,7 +1,6 @@
 import NotesContext from "../context/notes/noteContext";
 import { useContext } from "react";
-import { useEffect,useState } from "react";
-import { useRef } from "react";
+import { useEffect,useState,useRef } from "react";
 import NotesItem from "./notesItem";
 import { useNavigate } from "react-router-dom";
 function MyNotes(props) {
@@ -11,7 +10,6 @@ function MyNotes(props) {
   
   useEffect(() => {
     if(localStorage.getItem("authToken")){
-      console.log(localStorage.getItem("authToken"));
       initialNotes();
     }else{
       navigate("/login");

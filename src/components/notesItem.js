@@ -5,8 +5,6 @@ function NotesItem(props) {
   const context = useContext(NotesContext);
   const { deleteNote } = context;
   const { note,editNote,alertFun,bgcolor } = props;
-  console.log(bgcolor);
-console.log(typeof bgcolor);
   return (
     <>
       <div className="card my-2 " style={{
