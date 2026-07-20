@@ -2,7 +2,7 @@ import React from "react";
 import NotesContext from "./noteContext";
 import { useState } from "react";
 const NotesState = (props) => {
-  let host = "http://localhost:5000";
+  const host = "https://inotebook-mern-app-production.up.railway.app";
 
   const initialNotes = async () => {
     const response = await fetch(`${host}/api/notesRoute/fetchnotes`, {
